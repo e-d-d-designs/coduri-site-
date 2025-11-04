@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirector cod numeric</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+  <p>Se face redirect...</p>
+
+<script>
+// Mapare: cod numeric -> link final
+const map = {
+  "1234": "https://exemplu.ro", // <- Aici puneți site-ul dvs.
+  "5678": "https://exemplu.ro/oferta",
+  "9999": "https://alt-site.ro"
+};
+
+// Preia codul din adresă (ex: /1234)
+const path = window.location.pathname.replace(/^\/+|\/+$/g, "");
+if (path === "" || path === "index.html") {
+  document.body.innerHTML = `
+    <h2>Bine ați venit!</h2>
+    <p>Pentru a merge către o destinație, folosiți un cod numeric.</p>
+    <p>Exemplu: <b>/1234</b> sau <b>/5678</b></p>`;
+} else {
+  const code = path.split("/")[0];
+  if (map[code]) {
+    window.location.replace(map[code]);
+  } else {
+    document.body.innerHTML = `<h2>Cod necunoscut</h2><p>Codul „${code}” nu există.</p>`;
+  }
+}
+</script>
+</body>
+</html>
