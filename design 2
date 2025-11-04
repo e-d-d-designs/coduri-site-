@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numele Tău - Portofoliu Minimal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Integrat */
+        :root {
+            --culoare-text: #FFFFFF; /* Alb */
+            --culoare-fundal: #000000; /* Negru */
+            --culoare-accent: #6C63FF; /* Un violet subtil pentru link-uri/hover */
+        }
+
+        body {
+            /* Simulează un font 'coolvetica' cu Montserrat și fallback-uri sans-serif */
+            font-family: 'Montserrat', 'Arial', sans-serif;
+            background-color: var(--culoare-fundal);
+            color: var(--culoare-text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            font-weight: 300; /* Greutate ușoară pentru un aspect minimal */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--culoare-text);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        nav a {
+            color: var(--culoare-text);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--culoare-accent);
+        }
+
+        /* Stil pentru Secțiuni */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #333; /* O linie mai discretă */
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--culoare-accent); /* Scoate în evidență titlurile */
+        }
+
+        /* Stil pentru Portofoliu (Grid) */
+        .grid-proiecte {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .proiect {
+            border: 1px solid #333;
+            padding: 20px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .proiect:hover {
+            background-color: #111;
+            border-color: var(--culoare-accent);
+        }
+
+        .proiect h3 {
+            margin-top: 0;
+            font-weight: 400;
+        }
+
+        .proiect a {
+            color: var(--culoare-accent);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Stil pentru Contact */
+        .contact-links a {
+            color: var(--culoare-text);
+            text-decoration: underline;
+            margin-right: 20px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .contact-links a:hover {
+            color: var(--culoare-accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9em;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header id="acasa">
+            <nav>
+                <a href="#acasa">Acasă</a>
+                <a href="#despre">Despre Mine</a>
+                <a href="#portofoliu">Portofoliu</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <h1>Numele Tău</h1>
+            <p>**Titlul/Specializarea Ta Aici** (Ex: Dezvoltator Web, Designer UX/UI)</p>
+        </header>
+
+        <section id="despre">
+            <h2>Despre Mine</h2>
+            <p>
+                [Aici vei introduce un text concis despre tine. De exemplu:]
+                Sunt un profesionist pasionat de [Domeniu] cu **X ani de experiență** în [Sub-domeniu 1] și [Sub-domeniu 2]. Mă concentrez pe crearea de soluții elegante, eficiente și **orientate către utilizator**. Îmi place să învăț continuu și să abordez provocările complexe.
+            </p>
+            <p>
+                **Competențe Cheie:** HTML, CSS (SASS/Tailwind), JavaScript (React/Vue), Design Thinking, Figma, [Alte Competențe].
+            </p>
+        </section>
+
+        <section id="portofoliu">
+            <h2>Portofoliu</h2>
+            <div class="grid-proiecte">
+                <div class="proiect">
+                    <h3>Proiectul A: [Titlu Proiect]</h3>
+                    <p>[Descriere scurtă. De exemplu:] O aplicație de tip ToDo list construită cu React și CSS modular. Proiectul a demonstrat [o anumită abilitate].</p>
+                    <a href="[Link către Proiect/GitHub]" target="_blank">Vezi Proiectul →</a>
+                </div>
+
+                <div class="proiect">
+                    <h3>Proiectul B: [Titlu Proiect]</h3>
+                    <p>[Descriere scurtă. De exemplu:] Un redesign minimal al unui site de știri. Am îmbunătățit viteza de încărcare cu 30% și UX-ul.</p>
+                    <a href="[Link către Proiect/GitHub]" target="_blank">Vezi Studiul de Caz →</a>
+                </div>
+
+                <div class="proiect">
+                    <h3>Proiectul C: [Titlu Proiect]</h3>
+                    <p>[Descriere scurtă. De exemplu:] O campanie de branding completă. Am creat logo-ul, paleta de culori și ghidul de stil.</p>
+                    <a href="[Link către Proiect/Behance/Dribbble]" target="_blank">Vezi Design-ul →</a>
+                </div>
+                </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                Ești interesat de o colaborare sau vrei doar să spui "Bună"? Nu ezita să mă contactezi!
+            </p>
+            <div class="contact-links">
+                <a href="mailto:emailul.tau@exemplu.com">Email</a>
+                <a href="[Link către Profilul LinkedIn]" target="_blank">LinkedIn</a>
+                <a href="[Link către Profilul GitHub/Behance]" target="_blank">GitHub/Behance</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Numele Tău. Toate drepturile rezervate. Design minimal, alb pe negru.</p>
+    </footer>
+
+</body>
+</html>
