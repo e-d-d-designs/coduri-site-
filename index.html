@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofoliu — Numele Dvs.</title>
+
+  <style>
+    /* Layout & culori */
+    :root{
+      --bg: #000;
+      --fg: #fff;
+      --muted: rgba(255,255,255,0.75);
+      --accent: rgba(255,255,255,0.06);
+      --max-width: 1100px;
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      background:var(--bg);
+      color:var(--fg);
+      font-family:"Times New Roman", Times, serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Container */
+    .wrap{
+      max-width:var(--max-width);
+      margin:40px auto;
+      padding:24px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:28px;
+    }
+    .brand{
+      font-size:28px;
+      letter-spacing:0.6px;
+    }
+    .tag{
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    /* Nav minimal */
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-size:14px;
+      margin-left:18px;
+    }
+    nav a:hover{ color:var(--fg); }
+
+    /* Hero / About */
+    .hero{
+      padding:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      border-radius:12px;
+      margin-bottom:28px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.6);
+    }
+    .hero h1{
+      margin:0 0 8px 0;
+      font-size:40px;
+      line-height:1.05;
+    }
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    /* Portfolio grid */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin:26px 0;
+    }
+    .card{
+      background:rgba(255,255,255,0.02);
+      border-radius:8px;
+      padding:18px;
+      min-height:140px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      transition:transform .18s ease, box-shadow .18s ease;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.03);
+    }
+    .card h3{ margin:0 0 6px 0; font-size:18px; }
+    .card p{ margin:0; color:var(--muted); font-size:14px; }
+
+    /* Contact */
+    .contact{
+      margin-top:28px;
+      padding:18px;
+      background:linear-gradient(180deg, transparent, rgba(255,255,255,0.02));
+      border-radius:8px;
+    }
+    .contact a{
+      color:var(--fg);
+      text-decoration:none;
+      border-bottom:1px dashed rgba(255,255,255,0.08);
+    }
+    .muted{
+      color:var(--muted);
+    }
+
+    /* Footer */
+    footer{
+      margin-top:44px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .grid{ grid-template-columns:repeat(2, 1fr); }
+      .hero h1{ font-size:32px; }
+    }
+    @media (max-width:560px){
+      .wrap{ padding:16px; margin:20px auto; }
+      header{ flex-direction:column; align-items:flex-start; gap:12px; }
+      .grid{ grid-template-columns:1fr; }
+      .brand{ font-size:22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <div class="brand">Numele Dvs.</div>
+        <div class="tag">Designer • Ilustrator • Web</div>
+      </div>
+
+      <nav aria-label="Navigare principală">
+        <a href="#about">Despre</a>
+        <a href="#work">Proiecte</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="about" class="hero" aria-labelledby="about-title">
+      <h1 id="about-title">Salut — eu sunt Numele Dvs.</h1>
+      <p>
+        Sunt designer grafic cu experiență în identitate vizuală, packaging și web minimal.
+        Lucrez simplu, clar și cu atenție la detaliu. Aici sunt câteva proiecte recente.
+      </p>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <h2 class="muted" id="work-title" style="margin:0 0 12px 0;">Proiecte recente</h2>
+
+      <div class="grid">
+        <!-- Reproduceti / adăugați carduri -->
+        <article class="card">
+          <div>
+            <h3>Proiect 1 — Identitate</h3>
+            <p class="muted">Branding complet pentru o cafenea locală – naming, logo, etichetare.</p>
+          </div>
+          <div class="muted" style="font-size:12px;">2025</div>
+        </article>
+
+        <article class="card">
+          <div>
+            <h3>Proiect 2 — Ambalaj</h3>
+            <p class="muted">Design de ambalaj pentru produs lactate — concept ecologic.</p>
+          </div>
+          <div class="muted" style="font-size:12px;">2024</div>
+        </article>
+
+        <article class="card">
+          <div>
+            <h3>Proiect 3 — UI minimal</h3>
+            <p class="muted">Mic landing page pentru campanie promoțională — tipografie centrată.</p>
+          </div>
+          <div class="muted" style="font-size:12px;">2025</div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title" style="margin:0 0 8px 0;">Contact</h2>
+      <p class="muted" style="margin:0 0 10px 0;">Dacă doriți colaborare sau prețuri, scrieți-mi:</p>
+      <p>
+        Email: <a href="mailto:adresa@exemplu.ro">adresa@exemplu.ro</a><br>
+        Instagram: <a href="https://instagram.com/" target="_blank" rel="noopener">instagram.com/numele</a>
+      </p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Numele Dvs. — Portofoliu minimal
+    </footer>
+  </div>
+
+  <script>
+    // actualizează anul automat
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
